@@ -1,0 +1,48 @@
+﻿
+@model WebApplication3.Models.Plan
+
+@{
+    ViewBag.Title = "РЕДАКТИРОВАНИЕ";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Product</legend>
+
+        @Html.HiddenFor(model => model.PlanId)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PlanNaden)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PlanNaden)
+            @Html.ValidationMessageFor(model => model.PlanNaden)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Den)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Den)
+            @Html.ValidationMessageFor(model => model.Den)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

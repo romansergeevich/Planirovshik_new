@@ -1,0 +1,40 @@
+﻿@model IEnumerable<WebApplication3.Models.Plan>
+
+@{
+    ViewBag.Title = "ПЛАНИРОВЩИК";
+}
+
+<h2>Planirovshik</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PlanNaden)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Den)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PlanNaden)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Den)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.PlanId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.PlanId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.PlanId })
+            </td>
+        </tr>
+    }
+
+</table>

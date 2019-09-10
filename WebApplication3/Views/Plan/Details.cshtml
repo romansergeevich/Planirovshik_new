@@ -1,0 +1,30 @@
+﻿
+@model WebApplication3.Models.Plan
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Product</legend>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.PlanNaden)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PlanNaden)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Den)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Den)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.PlanId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
